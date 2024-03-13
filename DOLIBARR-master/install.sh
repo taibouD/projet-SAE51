@@ -54,7 +54,6 @@ services:
       - PMA_PASSWORD=dolibarr
     ports:
       - "8080:80"
-      
 " > docker-compose.yml
 
 # Lancer Docker Compose

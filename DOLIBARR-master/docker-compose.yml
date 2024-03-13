@@ -1,7 +1,4 @@
-#!/bin/bash
-
-# Créer un fichier docker-compose.yml
-echo "version: '3'
+version: '3'
 volumes:
   dolibarr_html:
   dolibarr_docs:
@@ -29,7 +26,7 @@ services:
     depends_on:
       - mariadb
     ports:
-      - "9000:80"
+      - 9000:80
     environment:
       - DOLI_ADMIN_LOGIN=admin
       - DOLI_ADMIN_PASSWORD=mypass
@@ -53,12 +50,5 @@ services:
       - PMA_USER=dolibarr
       - PMA_PASSWORD=dolibarr
     ports:
-      - "8080:80"
-      
-" > docker-compose.yml
-
-# Lancer Docker Compose
-docker-compose up -d
-
-echo "Dolibarr et le SGBD ont été installés avec succès."
+      - 8080:80
 
